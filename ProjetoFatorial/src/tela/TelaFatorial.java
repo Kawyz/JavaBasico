@@ -87,11 +87,13 @@ public class TelaFatorial extends javax.swing.JFrame {
 
     private void spnNumeroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnNumeroStateChanged
         // TODO add your handling code here:
-        int numFatorial = Integer.parseInt(spnNumero.getValue().toString());
+        int numero = Integer.parseInt(spnNumero.getValue().toString());
         int fatorial = 1;
+        int contador = numero;
 
-        for (int i = numFatorial; i > 0; i--) {
-            fatorial *= i;
+        while (contador >= 1) {
+            fatorial *= contador;
+            contador--;
         }
 
         lblFatorial.setText(Integer.toString(fatorial));
