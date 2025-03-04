@@ -125,15 +125,14 @@ public class TelaVoto extends javax.swing.JFrame {
         if (idade < 16) {
             lblResultado.setText("Nao Vota");
             lblIdade.setText("<html><div align = 'center'><b>" + idade + "</b> anos <br>Ainda nao pode votar</html>");
+        } else if ((idade >= 16 && idade < 18) || (idade > 70)) {
+            lblResultado.setText("Opcional");
+            lblIdade.setText("<html><div align = 'center'><b>" + idade + "</b> anos <br>Pode votar, mas nao e obrigatorio</html>");
         } else {
-            if ((idade >= 16 && idade < 18) || (idade > 70)) {
-                lblResultado.setText("Opcional");
-                lblIdade.setText("<html><div align = 'center'><b>" + idade + "</b> anos <br>Pode votar, mas nao e obrigatorio</html>");
-            } else {
-                lblResultado.setText("Obrigatorio");
-                lblIdade.setText("<html><div align = 'center'><b>" + idade + "</b> anos <br>Deve votar obrigatoriamente</html>");
-            }
+            lblResultado.setText("Obrigatorio");
+            lblIdade.setText("<html><div align = 'center'><b>" + idade + "</b> anos <br>Deve votar obrigatoriamente</html>");
         }
+
     }//GEN-LAST:event_btnVotoActionPerformed
 
     /**
