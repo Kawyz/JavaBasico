@@ -17,13 +17,42 @@ public class ExercicioRepita {
     public static void main(String[] args) {
         // TODO code application logic here
         int n;
-        int s = 0;
+        int soma = 0;
+        int totValores = 0;
+        int par = 0;
+        int impar = 0;
+        int maiorCem = 0;
+        double media;
+        
         
         do {
             n = Integer.parseInt(JOptionPane.showInputDialog(null,"<html>Informe um numero: <br><em>(valor 0 interrompe)</em></html>"));
-            s += n;
+                        
+            if(n % 2 == 0 && n != 0){
+               par += 1; 
+            } else if (n != 0){
+                impar += 1;
+            }
+            
+            if (n > 100){
+                maiorCem += 1;
+            }
+                    
+            if (n != 0){
+                totValores++;
+            }
+            soma += n;   
+                  
         } while (n != 0);
         
-        JOptionPane.showInputDialog(null, "<html>Resultado final: <br> ------------------------ <br> Somatorio vale " + s + "</html>");
+        media = soma / totValores;
+        
+        JOptionPane.showMessageDialog(null, "<html>Resultado final: <br> ------------------------ <br> Somatorio vale: " + soma + 
+                "<br> Total de Valores: " + totValores + 
+                "<br> Total de Pares: " + par + 
+                "<br> Total de Impares: " + impar +
+                "<br> Acima de 100: " + maiorCem +
+                "<br> Media dos valores: " + media +
+                "</html>");
     }
 }
