@@ -4,8 +4,8 @@
  */
 package meses;
 
-import java.time.LocalDate;
 import java.time.Year;
+import java.util.Scanner;
 
 /**
  *
@@ -17,13 +17,15 @@ public class Meses {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Scanner tec = new Scanner(System.in);
+        
         // TODO code application logic here
         String mes[] = {"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"};
         int tot[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        int anoAtual = LocalDate.now().getYear();
         
-        //tenho que pegar o ano de 2024 e adicionar + 4 se for adiciona 
-        
+        System.out.println("Em que ano estamos");
+        int anoAtual = tec.nextInt();
+                
         if (Year.of(anoAtual).isLeap()){
             System.out.println("E bissexto");
             tot[1] = 29;
